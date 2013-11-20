@@ -7,8 +7,16 @@ public class TicTacToe {
     public static void main(String[] args) {
         staticFileLocation("/public");
         
-        setPort(Integer.valueOf(System.getenv("PORT")));
+        //setPort(Integer.valueOf(System.getenv("PORT")));
 
+        get(new Route("/hello") {
+            @Override
+            public Object handle(Request request, Response response) {
+                return "Hello World!";
+            }
+        });
+
+        /*
         post(new Route("/mark-cell") {
             @Override
             public Object handle(Request request, Response response) {
@@ -16,5 +24,6 @@ public class TicTacToe {
                 return Integer.valueOf(request.queryParams("cell"));
             }
         });
+        */
     }
 }
