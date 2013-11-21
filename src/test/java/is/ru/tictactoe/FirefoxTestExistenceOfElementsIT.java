@@ -50,7 +50,7 @@ public class FirefoxTestExistenceOfElementsIT {
 	@Test
 	public void TestIfH1ContainsTicTacToe() throws Exception{
 		driver.get(baseUrl);
-		WebElement header1 = driver.findElement(By.id("h1"));
+		WebElement header1 = driver.findElement(By.id("header1"));
 		assertEquals("Tic Tac Toe !", header1.getText());
 	}
 
