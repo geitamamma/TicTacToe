@@ -46,6 +46,12 @@ public class FirefoxTestExistenceOfElementsIT {
 		assertTrue(IsElementPresent(By.id("message")));
 	}
 
+	@Test
+	public void TestIfH1ContainsTicTacToe() throws Exception{
+		driver.get(baseUrl);
+		assertEquals("Tic Tac Toe", driver.getText('h1'));
+	}
+
 	@After
 	public void TearDown() throws Exception {
 		driver.quit();
