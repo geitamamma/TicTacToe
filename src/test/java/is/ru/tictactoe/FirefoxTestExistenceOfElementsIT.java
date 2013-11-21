@@ -10,45 +10,57 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class FirefoxTestExistenceOfElementsIT {
-  private WebDriver driver;
-  private String baseUrl;
-  private boolean acceptNextAlert = true;
-  private StringBuffer verificationErrors = new StringBuffer();
+	private WebDriver driver;
+	private String baseUrl;
+	private boolean acceptNextAlert = true;
+	private StringBuffer verificationErrors = new StringBuffer();
 
-  @Before
-  public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    baseUrl = System.getenv("STAGING_SERVER");
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-  }
+	@Before
+	public void SetUp() throws Exception {
+		driver = new FirefoxDriver();
+		baseUrl = System.getenv("STAGING_SERVER");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
 
-  @Test
-  public void titleShouldBeTicTacToe() throws Exception {
-    driver.get(baseUrl);
-    assertEquals("Tic Tac Toe", driver.getTitle());
-  }
+	@Test
+	public void TestIfTitleIsTicTacToe() throws Exception {
+		driver.get(baseUrl);
+		assertEquals("Tic Tac Toe", driver.getTitle());
+	}
 
-  @Test
-  public void testIfGameBoardTableIsPresent() throws Exception{
-    driver.get(baseUrl);
-    assertTrue(isElementPresent(By.className("game-board")));
-  }
+	@Test
+	public void TestIfGameBoardTableIsPresent() throws Exception{
+		driver.get(baseUrl);
+		assertTrue(IsElementPresent(By.className("game-board")));
+	}
 
-  @After
-  public void tearDown() throws Exception {
-    driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
-  }
+	@Test
+	public void TestIfResetButtonIsPresent() throws Exception{
+		driver.get(baseUrl);
+		assertTrue(IsElementPresent(By.id("reset-game")));
+	}
 
-  private boolean isElementPresent(By by) {
-    try {
-      driver.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
+	@Test
+	public void TestIfMessageBoxIsPresent() throws Exception{
+		driver.get(baseUrl);
+		assertTrue(IsElementPresent(By.id("message")));
+	}
+
+	@After
+	public void TearDown() throws Exception {
+		driver.quit();
+		String verificationErrorString = verificationErrors.toString();
+		if (!"".equals(verificationErrorString)) {
+			fail(verificationErrorString);
+		}
+	}
+
+	private boolean IsElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
 }
