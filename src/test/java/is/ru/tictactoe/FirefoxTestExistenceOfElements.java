@@ -28,6 +28,12 @@ public class FirefoxTestTitleIT {
     assertEquals("Tic Tac Toe", driver.getTitle());
   }
 
+  @Test
+  public void testIfGameBoardTableIsPresent() throws Exception{
+    driver.get(baseUrl);
+    assertTrue(isElementPresent(By.className("game-board")));
+  }
+
   @After
   public void tearDown() throws Exception {
     driver.quit();
