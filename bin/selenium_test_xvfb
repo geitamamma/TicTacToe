@@ -5,7 +5,7 @@ sudo bin/xvfb start
 export DISPLAY=:99
 
 # Run tests
-export STAGING_SERVER="http://localhost:4567"
+export STAGING_SERVER="http://geitamamma.herokuapp.com/"
 mvn test-compile failsafe:integration-test failsafe:verify
 EXIT_CODE=$?
 
