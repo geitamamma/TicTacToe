@@ -18,7 +18,7 @@ public class FirefoxTestTitleIT {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://localhost:4567"; //System.getenv("STAGING_SERVER");
+    baseUrl = System.getenv("STAGING_SERVER");
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
