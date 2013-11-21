@@ -1,6 +1,7 @@
 package is.ru.tictactoe;
 
 import java.util.concurrent.TimeUnit;
+import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
@@ -49,15 +50,15 @@ public class FirefoxTestExistenceOfElementsIT {
 	@Test
 	public void TestIfH1ContainsTicTacToe() throws Exception{
 		driver.get(baseUrl);
-		WebElement header1 = driver.findElement(By.tagName('h1'));
-		assertEquals("Tic Tac Toe", header1.getText());
+		WebElement header1 = driver.findElement(By.id("h1"));
+		assertEquals("Tic Tac Toe !", header1.getText());
 	}
 
 	@Test
 	public void TestIfAllCellsArePresent() throws Exception{
 		driver.get(baseUrl);
-		List<WebElement> cells = driver.findElement(By.className('cell'));
-		assertEquals(9, cells.length());
+		List<WebElement> cells = driver.findElements(By.className("cell"));
+		assertEquals(9, cells.size());
 	}
 
 	@After
