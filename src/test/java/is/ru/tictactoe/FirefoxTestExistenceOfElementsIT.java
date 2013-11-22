@@ -23,6 +23,9 @@ public class FirefoxTestExistenceOfElementsIT {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
+	/****************
+	*** THE TESTS ***
+	****************/
 	@Test
 	public void TestIfTitleIsTicTacToe() throws Exception {
 		driver.get(baseUrl);
@@ -59,6 +62,12 @@ public class FirefoxTestExistenceOfElementsIT {
 		driver.get(baseUrl);
 		List<WebElement> cells = driver.findElements(By.className("cell"));
 		assertEquals(9, cells.size());
+	}
+
+	@Test
+	public void TestToFail() throws Exception{
+		driver.get(baseUrl);
+		assertEquals("Fail!", driver.getTitle());
 	}
 
 	@After
