@@ -7,9 +7,13 @@ deploy:
   app: geitamamma-staging
   on:
     repo: geitamamma/TicTacToe
+env:
+  global:
+    secure: H9gOADsHVKyyEj+oxMEJXBcjh4FzSVFFWFSmZixAiFHbhTQ4CcAfEYjrsz+YDXrxSkPEY0J+bzq3Qsb10meHbMyTuCKnGNt8QqyxgQuFbvz$
 before_install:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   - git remote add heroku git@heroku.com:geitamamma-staging.git
+  - echo "Host heroku.com" >> ~/.ssh/config
   - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
   - echo "   CheckHostIP no" >> ~/.ssh/config
   - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
@@ -18,6 +22,3 @@ before_install:
 script:
   - sh bin/compile
   - sh bin/package
-env:
-  global:
-    secure: H9gOADsHVKyyEj+oxMEJXBcjh4FzSVFFWFSmZixAiFHbhTQ4CcAfEYjrsz+YDXrxSkPEY0J+bzq3Qsb10meHbMyTuCKnGNt8QqyxgQuFbvz$
