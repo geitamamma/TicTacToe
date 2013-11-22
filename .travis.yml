@@ -1,8 +1,11 @@
 language: java
 jdk: openjdk7
+before_script:
+  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
   - sh bin/compile
   - sh bin/package
-  - ssh-add cc03e230-c5ad-43c4-8eff-7a10976738db
   - git remote add deploy git@heroku.com:geitamamma-staging.git
-  - yes | git push deploy
+  - ssh-add cc03e230-c5ad-43c4-8eff-7a10976738db
+  - yes | git push deploy master
