@@ -9,5 +9,5 @@ deploy:
     repo: geitamamma/TicTacToe
 
 after_script:
-  export STAGING_SERVER=http://staging-geitamamma.herokuapp.com/
-  sh bin/selenium_test_xvfb
+  - export STAGING_SERVER=http://staging-geitamamma.herokuapp.com/
+  - sh bin/selenium_test_xvfb
