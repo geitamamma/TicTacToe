@@ -13,8 +13,11 @@ before_install:
   - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
   - echo "   CheckHostIP no" >> ~/.ssh/config
   - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-  - yes | heroku keys:add
+  - heroku keys:add
   - git push heroku master
 script:
   - sh bin/compile
   - sh bin/package
+env:
+  global:
+    secure: H9gOADsHVKyyEj+oxMEJXBcjh4FzSVFFWFSmZixAiFHbhTQ4CcAfEYjrsz+YDXrxSkPEY0J+bzq3Qsb10meHbMyTuCKnGNt8QqyxgQuFbvz$
