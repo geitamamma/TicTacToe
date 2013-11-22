@@ -9,16 +9,17 @@ deploy:
     repo: geitamamma/TicTacToe
 env:
   global:
-    secure: H9gOADsHVKyyEj+oxMEJXBcjh4FzSVFFWFSmZixAiFHbhTQ4CcAfEYjrsz+YDXrxSkPEY0J+bzq3Qsb10meHbMyTuCKnGNt8QqyxgQuFbvz$
+  - secure: H9gOADsHVKyyEj+oxMEJXBcjh4FzSVFFWFSmZixAiFHbhTQ4CcAfEYjrsz+YDXrxSkPEY0J+bzq3Qsb10meHbMyTuCKnGNt8QqyxgQuFbvz$
+  - secure: pRvCsNkKHcnEtQ1gJXLByS2tdCmrGQx8bI8R38NK8kpcPw5k8XLxWeJnZmnFJPros+yebrvEQWdKaGqogMAf/HTNkDDW0WP36m+HDcnkjh71PQQ15m395ZUaR4e2BwfGFkuoXguu38q7qMdmi3v9mKyNVCyCx5m/bpg+SWzGgTk=
 before_install:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - git remote add heroku git@heroku.com:geitamamma-staging.git
-  - echo "Host heroku.com" >> ~/.ssh/config
-  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-  - echo "   CheckHostIP no" >> ~/.ssh/config
-  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-  - heroku keys:add
-  - git push heroku master
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- git remote add heroku git@heroku.com:geitamamma-staging.git
+- echo "Host heroku.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- heroku keys:add
+- git push heroku master
 script:
-  - sh bin/compile
-  - sh bin/package
+- sh bin/compile
+- sh bin/package
