@@ -6,7 +6,6 @@ before_script:
 script:
   - sh bin/compile
   - sh bin/package
-  - chmod 600 .travis/deploy_key.pem # this key should have push access
-  - ssh-add .travis/deploy_key.pem
+  - ssh-add cc03e230-c5ad-43c4-8eff-7a10976738db
   - git remote add deploy git@heroku.com:geitamamma-staging.git
   - git push deploy
