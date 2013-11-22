@@ -3,8 +3,7 @@ jdk: openjdk7
 deploy:
   provider: heroku
   api_key:
-    - secure: H9gOADsHVKyyEj+oxMEJXBcjh4FzSVFFWFSmZixAiFHbhTQ4CcAfEYjrsz+YDXrxSkPEY0J+bzq3Qsb10meHbMyTuCKnGNt8QqyxgQuFbvz$
-    - secure: pRvCsNkKHcnEtQ1gJXLByS2tdCmrGQx8bI8R38NK8kpcPw5k8XLxWeJnZmnFJPros+yebrvEQWdKaGqogMAf/HTNkDDW0WP36m+HDcnkjh71PQQ15m395ZUaR4e2BwfGFkuoXguu38q7qMdmi3v9mKyNVCyCx5m/bpg+SWzGgTk=
+    secure: AmLVQZEk3ZG688EPrZAbFztvun8qHVkTMrIxqw5TN+hCJg2GQBWMzo+OFT1BDP6WvwtWQ/f07ik2SHlgRMtAQ3SCRy8T8PjU351zFyh2Yok7Z0zBUnnrQ2FlQ1IFLqCn9iFVK7cFoS3uZCsQt9f2swJlE7odHHzAZGPoVrkux+M=
   app: geitamamma-production
   on:
     repo: geitamamma/TicTacToe
