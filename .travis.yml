@@ -14,5 +14,5 @@ script:
   - sh bin/compile
   - sh bin/package
   - git remote add deploy git@heroku.com:geitamamma-staging.git
-  - deploy keys:add
+  - yes | deploy keys:add
   - yes | git push deploy master
