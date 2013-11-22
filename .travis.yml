@@ -7,5 +7,5 @@ script:
   - sh bin/compile
   - sh bin/package
   - ssh-add cc03e230-c5ad-43c4-8eff-7a10976738db
-  - git remote add deploy git@heroku.com:geitamamma-staging.git
+  - git remote add deploy git://heroku.com/geitamamma-staging.git
   - git push deploy
