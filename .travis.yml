@@ -17,3 +17,5 @@ before_install:
 script:
 - sh bin/compile
 - sh bin/package
+- export STAGING_SERVER=http://geitamamma-staging.herokuapp.com/
+- sh bin/selenium_test_xvfb
