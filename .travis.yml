@@ -4,6 +4,6 @@ jdk: openjdk7
 script:
   - sh bin/compile
   - sh bin/package
-  - ssh-add secure: Q29M6Nu3fNquN9VCq14YNIvkLu9X+ViwGEt2Tm5W+NQbaGCqOu7GZLwP6eRIwFmNFa68xWVh1h9NpYyDBuzEHJZqk2BG51dMlonNjxAvS6u89R5Qid4VDD9FbobBBI+l/0J8odSJuO5ZK9uPvpeoAyH9Ld8Yl0doZtrITDADtWo=
-  - git remote add deploy git://heroku.com/geitamamma-staging.git
+  - ssh-add cc03e230-c5ad-43c4-8eff-7a10976738db
+  - git remote add deploy git@heroku.com:geitamamma-staging.git
   - git push deploy
