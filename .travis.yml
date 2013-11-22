@@ -1,15 +1,5 @@
 language: java
 jdk: openjdk7
-env:
-  global:
-    secure: HfaLTavTuyClB2pOaglUTxSJHek9GLfxNTdrXQEXxJhSrlYBKLXzuhn9H0kYl0I1km0jYp5g61/h2GtjRKfs1M7L5HUJsf2T/Iqc5RZvrVO7utDavMx1KqrzaMOY6VILyftuK1fcaYYOIBiAMPm+iw4irEL/QZjCaXm8Vn5ihbs=
-deploy:
-  provider: heroku
-  api_key:
-    secure: AmLVQZEk3ZG688EPrZAbFztvun8qHVkTMrIxqw5TN+hCJg2GQBWMzo+OFT1BDP6WvwtWQ/f07ik2SHlgRMtAQ3SCRy8T8PjU351zFyh2Yok7Z0zBUnnrQ2FlQ1IFLqCn9iFVK7cFoS3uZCsQt9f2swJlE7odHHzAZGPoVrkux+M=
-  app: geitamamma-production
-  on:
-    repo: geitamamma/TicTacToe
 before_install:
 - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 - git remote add heroku git@heroku.com:geitamamma-staging.git
@@ -24,3 +14,13 @@ script:
 - sh bin/package
 - export STAGING_SERVER=http://geitamamma-staging.herokuapp.com/
 - sh bin/selenium_test_xvfb
+deploy:
+  provider: heroku
+  api_key:
+    secure: N4eGJD/APpbs9O3l+kRQIZoP2VUAAFt/zjYH17ydIBZekpl2hpFLMjH4q410Qy/qNIAL4lwFeJuVIwRs1xjqmVD4DsWZbrtVg3gLxvP0TFaZwWKpFuZZa0peKtPr/cAxHnr0g713yDF8XHsubXV4GWTcgGzLuB6XEFBax0X3ISw=
+  app: geitamamma-production
+  on:
+    repo: geitamamma/TicTacToe
+env:
+  global:
+    secure: RJ2KNvyUEyE3dYct+BC0WCgHkfgcC4Tu4cc3khk4Y4D5T/5rDggeuw2eU7GxAcNO5rJecrVFZWTo7Vtqxe1AjJlytRQlfR6hSS/ZXs+VhfqmTpcgUT+lLNIBDzP4mAFrEH86KZoDd2/HQbDK794f7azbuEFerDTHbnUqYPHmZLo=
