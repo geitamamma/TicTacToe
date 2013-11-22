@@ -1,2 +1,9 @@
 language: java
 jdk: openjdk7
+deploy:
+  provider: heroku
+  api_key:
+    secure: Q29M6Nu3fNquN9VCq14YNIvkLu9X+ViwGEt2Tm5W+NQbaGCqOu7GZLwP6eRIwFmNFa68xWVh1h9NpYyDBuzEHJZqk2BG51dMlonNjxAvS6u89R5Qid4VDD9FbobBBI+l/0J8odSJuO5ZK9uPvpeoAyH9Ld8Yl0doZtrITDADtWo=
+  app: staging-geitamamma
+  on:
+    repo: geitamamma/TicTacToe
