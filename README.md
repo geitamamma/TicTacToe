@@ -1,4 +1,4 @@
 TicTacToe
 =========
 
-[![Build Status](https://travisci.org/geitamamma/TicTacToe.png)](https://travisci.org/geitamamma/TicTacToe)
+[![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](https://travis-ci.org/geitamamma/TicTacToe)
