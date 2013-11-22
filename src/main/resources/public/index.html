@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tic Tac Toe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- load bootstrap for nicer ui -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<!-- load jquery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 id="header1">Tic Tac Toe !</h1>
+
+		<div id="message">
+		</div>
+		<div class="row">
+			<table class="table game-board">
+				<tbody>
+					<tr>
+						<td id="0" class="cell"></td>
+						<td id="1" class="cell"></td>
+						<td id="2" class="cell"></td>
+					</tr>
+					<tr>
+						<td id="3" class="cell"></td>
+						<td id="4" class="cell"></td>
+						<td id="5" class="cell"></td>
+					</tr>
+					<tr>
+						<td id="6" class="cell"></td>
+						<td id="7" class="cell"></td>
+						<td id="8" class="cell"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<hr>
+		<button id="reset-game" class="btn pull-right" value="Reset Game">
+			Reset Game
+		</button>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+$('td').on('click', function(e){
+	e.preventDefault();
+	var cellNr = $(this).attr('id');
+	var url = '/mark-cell';
+
+	var posting = $.post( url, { cell: cellNr } );
+	posting.done(function( message ) {
+		if(message == "1"){
+			$('#'+cellNr).addClass('mark1');
+			$('#message').html('Player 2 has game.').attr('class', 'alert alert-info');
+		}
+		else if(message == "2"){
+			$('#'+cellNr).addClass('mark2');
+			$('#message').html('Player 1 has game.').attr('class', 'alert alert-info');
+		}
+		else{
+			$('#message').html(message).attr('class', 'alert alert-info');
+		}
+	});
+});
+</script>
+
+<style type="text/css">
+td{
+	width: 70px;
+	height: 70px;
+	border: 1px solid black;
+}
+
+.mark1{
+	background: #000000;
+}
+
+.mark2{
+	background: #454545;
+}
+</style>
