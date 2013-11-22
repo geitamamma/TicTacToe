@@ -11,6 +11,9 @@ before_install:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+  - echo "   CheckHostIP no" >> ~/.ssh/config
+  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
   - heroku keys:add
 script:
   - sh bin/compile
