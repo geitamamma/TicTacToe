@@ -1,11 +1,12 @@
 language: java
 jdk: openjdk7
 before_script:
-  - ssh-add cc03e230-c5ad-43c4-8eff-7a10976738db
   - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
   - sh bin/compile
   - sh bin/package
+  - chmod 600 .travis/deploy_key.pem # this key should have push access
+  - ssh-add .travis/deploy_key.pem
   - git remote add deploy git@heroku.com:geitamamma-staging.git
   - git push deploy
