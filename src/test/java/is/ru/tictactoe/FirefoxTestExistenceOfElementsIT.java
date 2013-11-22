@@ -64,12 +64,6 @@ public class FirefoxTestExistenceOfElementsIT {
 		assertEquals(9, cells.size());
 	}
 
-	@Test
-	public void TestToFail() throws Exception{
-		driver.get(baseUrl);
-		assertEquals("Fail!", driver.getTitle());
-	}
-
 	@After
 	public void TearDown() throws Exception {
 		driver.quit();
