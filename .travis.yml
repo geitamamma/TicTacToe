@@ -9,10 +9,9 @@ deploy:
     repo: geitamamma/TicTacToe
 before_install:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - heroku keys:add
-before_script:
   - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - heroku keys:add
 script:
   - sh bin/compile
   - sh bin/package
