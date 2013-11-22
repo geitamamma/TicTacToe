@@ -1,5 +1,8 @@
 language: java
 jdk: openjdk7
+env:
+  global:
+    secure: HfaLTavTuyClB2pOaglUTxSJHek9GLfxNTdrXQEXxJhSrlYBKLXzuhn9H0kYl0I1km0jYp5g61/h2GtjRKfs1M7L5HUJsf2T/Iqc5RZvrVO7utDavMx1KqrzaMOY6VILyftuK1fcaYYOIBiAMPm+iw4irEL/QZjCaXm8Vn5ihbs=
 deploy:
   provider: heroku
   api_key:
@@ -21,6 +24,3 @@ script:
 - sh bin/package
 - export STAGING_SERVER=http://geitamamma-staging.herokuapp.com/
 - sh bin/selenium_test_xvfb
-env:
-  global:
-    secure: HfaLTavTuyClB2pOaglUTxSJHek9GLfxNTdrXQEXxJhSrlYBKLXzuhn9H0kYl0I1km0jYp5g61/h2GtjRKfs1M7L5HUJsf2T/Iqc5RZvrVO7utDavMx1KqrzaMOY6VILyftuK1fcaYYOIBiAMPm+iw4irEL/QZjCaXm8Vn5ihbs=
