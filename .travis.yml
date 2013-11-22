@@ -1,6 +1,8 @@
 language: java
 jdk: openjdk7
-
+before_script:
+  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
   - sh bin/compile
   - sh bin/package
