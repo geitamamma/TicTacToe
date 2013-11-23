@@ -119,6 +119,31 @@ public class GameHubTest{
 		assertEquals("Player1", game.GetNextPlayerName());
 	}
 
+	/***************************
+	*** Test GetNextPlayerNr ***
+	***************************/
+	@Test
+	public void TestGetNextPlayerNrNewGame(){
+		ITicTacToeGame newGame = new TicTacToeGame();
+		GameHub game = new GameHub(newGame, player1, player2);
+		assertEquals(1, game.GetNextPlayerNr());
+	}
+
+	@Test
+	public void TestGetNextPlayerNrNewGameOneMove(){
+		ITicTacToeGame newGame = new TicTacToeGame();
+		GameHub game = new GameHub(newGame, player1, player2);
+		game.MarkCell(5, 1);
+		assertEquals(2, game.GetNextPlayerNr());
+	}
+
+	@Test
+	public void TestGetNextPlayerNrMockGame(){
+		ITicTacToeGame threeMovesLeft = new TicTacToeMock();
+		GameHub game = new GameHub(threeMovesLeft, player1, player2);
+		assertEquals(1, game.GetNextPlayerNr());
+	}
+
 	/*****************************
 	*** Test MarkCell MockGame ***
 	******************************/
