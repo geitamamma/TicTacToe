@@ -3,9 +3,9 @@ package is.ru.tictactoe;
 import java.util.ArrayList;
 
 public class GameHub{
-	private ITicTacToeGame game;
-	private Player player1;
-	private Player player2;
+	private static ITicTacToeGame game;
+	private static Player player1;
+	private static Player player2;
 	private boolean gameOver;
 	private boolean isDraw;
 	private static String message;
@@ -21,8 +21,6 @@ public class GameHub{
 	}
 
 	public void MarkCell(int cellNr, int playerNr){
-		if(gameOver)
-			return;
 		try{
 			game.MarkCell(cellNr, playerNr);
 		}
