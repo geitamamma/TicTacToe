@@ -16,6 +16,9 @@ public class FirefoxTestExistenceOfElementsIT {
 	private boolean acceptNextAlert = true;
 	private StringBuffer verificationErrors = new StringBuffer();
 
+	/************
+	*** SETUP ***
+	************/
 	@Before
 	public void SetUp() throws Exception {
 		driver = new FirefoxDriver();
@@ -64,6 +67,9 @@ public class FirefoxTestExistenceOfElementsIT {
 		assertEquals(9, cells.size());
 	}
 
+	/**************
+	*** CLOSING ***
+	**************/
 	@After
 	public void TearDown() throws Exception {
 		driver.quit();
