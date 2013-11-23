@@ -1,12 +1,29 @@
 package is.ru.tictactoe;
-
-public class TicTacToeGame implements ITicTacToeGame{
+// Mock class for TicTacToeGame
+// 3 moves left
+// Player 1 is next
+public class TicTacToeMock implements ITicTacToeGame{
 	private int[] gameBoard;
-	private static int nextPlayer;
-	private static int movesLeft;
+	private int nextPlayer;
+	private int movesLeft;
 
-	public TicTacToeGame(){
-		Initialize();
+	public TicTacToeMock(){
+		//Game Board
+		//x x
+		//  o o
+		//o x
+		gameBoard = new int[9];
+		gameBoard[0] = 1;
+		gameBoard[1] = 1;
+		gameBoard[2] = 0;
+		gameBoard[3] = 0;
+		gameBoard[4] = 2;
+		gameBoard[5] = 2;
+		gameBoard[6] = 2;
+		gameBoard[7] = 1;
+		gameBoard[8] = 0;
+		nextPlayer = 1;
+		movesLeft = 3; 
 	}
 
 	public int[] GetGameBoard(){
@@ -38,13 +55,5 @@ public class TicTacToeGame implements ITicTacToeGame{
 			nextPlayer = 2;
 		else
 			nextPlayer = 1;
-	}
-
-	private void Initialize(){
-		nextPlayer = 1;
-		movesLeft = 9;
-		gameBoard = new int[9];
-		for(int i=0; i<9; i++)
-			gameBoard[i] = 0;
 	}
 }

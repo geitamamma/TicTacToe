@@ -1,8 +1,8 @@
 package is.ru.tictactoe;
 
 public interface ITicTacToeGame{
-	int[] GetGameBoard();
-	int GetNextPlayer();
-	int GetMovesLeft();
-	void MarkCell(int cellNr, int playerNr) throws Exception;
+	public int[] GetGameBoard();
+	public int GetNextPlayer();
+	public int GetMovesLeft();
+	public void MarkCell(int cellNr, int playerNr) throws IllegalArgumentException;
 }
