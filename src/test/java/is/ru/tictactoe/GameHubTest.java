@@ -126,7 +126,7 @@ public class GameHubTest{
 	public void TestMarkCellPlayer2Wins(){
 		ITicTacToeGame threeMovesLeft = new TicTacToeMock();
 		GameHub game = new GameHub(threeMovesLeft, player1, player2);
-		game.MarkCell(3, 2);
+		game.MarkCell(5, 2);
 		assertEquals("Player2 has won !", game.GetMessage());
 	}
 
@@ -134,15 +134,16 @@ public class GameHubTest{
 	public void TestMarkCellPlayer1Wins(){
 		ITicTacToeGame threeMovesLeft = new TicTacToeMock();
 		GameHub game = new GameHub(threeMovesLeft, player1, player2);
-		game.MarkCell(2, 1);
+		game.MarkCell(3, 1);
 		assertEquals("Player1 has won !", game.GetMessage());
 	}
 
 	@Test
-	public void TestMarkCellPlayer1IsNext(){
+	public void TestMarkCellPlayer1IsNextAfter2Moves(){
 		ITicTacToeGame threeMovesLeft = new TicTacToeMock();
 		GameHub game = new GameHub(threeMovesLeft, player1, player2);
-		game.MarkCell(8, 2);
+		game.MarkCell(5, 1);
+		game.MarkCell(3, 2);
 		assertEquals("Player1, it's your turn !", game.GetMessage());
 	}
 
@@ -150,7 +151,7 @@ public class GameHubTest{
 	public void TestMarkCellPlayer2IsNext(){
 		ITicTacToeGame threeMovesLeft = new TicTacToeMock();
 		GameHub game = new GameHub(threeMovesLeft, player1, player2);
-		game.MarkCell(8, 1);
+		game.MarkCell(5, 1);
 		assertEquals("Player2, it's your turn !", game.GetMessage());
 	}
 
@@ -158,9 +159,9 @@ public class GameHubTest{
 	public void TestMarkCellGetDraw(){
 		ITicTacToeGame threeMovesLeft = new TicTacToeMock();
 		GameHub game = new GameHub(threeMovesLeft, player1, player2);
-		game.MarkCell(8, 2);
-		game.MarkCell(3, 1);
-		game.MarkCell(2, 2);
+		game.MarkCell(5, 1);
+		game.MarkCell(3, 2);
+		game.MarkCell(7, 1);
 		assertEquals("It's a draw !", game.GetMessage());
 	}
 

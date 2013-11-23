@@ -17,70 +17,157 @@
 		<div id="message">
 		</div>
 		<div class="row">
-			<table class="table game-board">
-				<tbody>
-					<tr>
-						<td id="0" class="cell"></td>
-						<td id="1" class="cell"></td>
-						<td id="2" class="cell"></td>
-					</tr>
-					<tr>
-						<td id="3" class="cell"></td>
-						<td id="4" class="cell"></td>
-						<td id="5" class="cell"></td>
-					</tr>
-					<tr>
-						<td id="6" class="cell"></td>
-						<td id="7" class="cell"></td>
-						<td id="8" class="cell"></td>
-					</tr>
-				</tbody>
-			</table>
+			<div id="player-form-container">
+				<form method="post" id="player-form" action="/add-names" class="form-horizontal" role="form">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="player1">Player 1:</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" name="player1" id="player1" placeholder="Player 1">
+								</div>
+							</div>
+						</div>
+					</div>	
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="player2">Player 2:</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" name="player2" id="player2" placeholder="Player 2">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<button id="start-game" type="submit" class="btn pull-right">Start Game</button>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
-
+		<div class="row">
+			<div class="col-md-3">
+				<table class="game-board">
+					<tbody>
+						<tr>
+							<td id="0" class="cell"></td>
+							<td id="1" class="cell"></td>
+							<td id="2" class="cell"></td>
+						</tr>
+						<tr>
+							<td id="3" class="cell"></td>
+							<td id="4" class="cell"></td>
+							<td id="5" class="cell"></td>
+						</tr>
+						<tr>
+							<td id="6" class="cell"></td>
+							<td id="7" class="cell"></td>
+							<td id="8" class="cell"></td>
+						</tr>
+					</tbody>
+				</table>
+				<button id="reset-game" class="btn pull-right">Reset Game</button>
+			</div>
+		</div>
 		<hr>
-		<button id="reset-game" class="btn pull-right" value="Reset Game">
-			Reset Game
-		</button>
 	</div>
 </body>
 </html>
 
 <script type="text/javascript">
-$('td').on('click', function(e){
-	e.preventDefault();
-	var cellNr = $(this).attr('id');
-	var url = '/mark-cell';
+$(document).ready(function(){
+	$('.game-board').hide();
+	$('#reset-game').hide();
 
-	var posting = $.post( url, { cell: cellNr } );
-	posting.done(function( message ) {
-		if(message == "1"){
-			$('#'+cellNr).addClass('mark1');
-			$('#message').html('Player 2 has game.').attr('class', 'alert alert-info');
-		}
-		else if(message == "2"){
-			$('#'+cellNr).addClass('mark2');
-			$('#message').html('Player 1 has game.').attr('class', 'alert alert-info');
-		}
-		else{
-			$('#message').html(message).attr('class', 'alert alert-info');
-		}
+	var form = $('form');
+	form.submit(function(e) {
+		e.preventDefault();
+		var player1 = $("#player1").val();
+		var player2 = $("#player2").val();
+		$.ajax({
+			type: form.attr('method'),
+			url: form.attr('action'),
+			data: 'player1=' + player1 + '&player2=' + player2
+		}).done(function(message) {
+			if(message == "valid"){
+				startGame();
+			}
+			else{
+				$('#message').html(message).attr('class', 'alert alert-danger');
+			}
+			
+		}).fail(function() {
+			$('#message').html('This is somewhat embarrassing.').attr('class', 'alert alert-danger');
+		});
 	});
+
+	function startGame(){
+		$('#message').empty();
+		$('#start-game').hide();
+		$('#player-form-container').hide();
+		$('.game-board').show();
+		$('#reset-game').show();
+		$.ajax({
+			type: "post",
+			url: "/start-game",
+		}).done(function(message){
+			$('#message').html(message).attr('class', 'alert alert-info');
+		}).fail(function(){
+			$('#message').html('This is somewhat embarrassing. Try reset the game.').attr('class', 'alert alert-danger');
+		})
+	};
+	
+	$('td').on('click', function(e){
+		e.preventDefault();
+		var cellNr = $(this).attr('id');
+		var cell = $(this);
+		$.ajax({
+			type: "post",
+			url: "/mark-cell",
+			data: 'cell=' + cellNr
+		}).done(function(message){
+			var splitMessage = message.split(';');
+			if(splitMessage.length > 1){
+				cell.html(splitMessage[0]);
+				$('#message').html(splitMessage[1]).attr('class', 'alert alert-info');
+			}
+			else
+				$('#message').html(message).attr('class', 'alert alert-info');
+		}).fail(function(){
+			$('#message').html('This is somewhat embarrassing. Try reset the game.').attr('class', 'alert alert-danger');
+		})
+	});
+
+	$('#reset-game').on('click', function(e){
+		$.each($('td'), function(){
+			$(this).empty();
+			$(this).attr('class', 'cell');
+		})
+		startGame();
+	})
 });
 </script>
 
 <style type="text/css">
-td{
-	width: 70px;
-	height: 70px;
+.cell{
+	width: 85px;
+	height: 85px;
+	font-size: 55px;
+	text-align: center;
 	border: 1px solid black;
 }
 
-.mark1{
-	background: #000000;
+.row{
+	margin: 0px;
 }
 
-.mark2{
-	background: #454545;
+h1{
+	margin-bottom: 20px !important;
+}
+
+#reset-game{
+	margin-top: :20px;
 }
 </style>

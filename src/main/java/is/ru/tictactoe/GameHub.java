@@ -8,7 +8,7 @@ public class GameHub{
 	private static Player player2;
 	private boolean gameOver;
 	private boolean isDraw;
-	private static String message;
+	private String message;
 	private int winner;
 
 	public GameHub(ITicTacToeGame _game, Player _player1, Player _player2) throws IllegalArgumentException{
@@ -18,9 +18,12 @@ public class GameHub{
 		player1 = _player1;
 		player2 = _player2;
 		winner = 0;
+		message = "First player is " + GetNextPlayerName() + ".";
 	}
 
 	public void MarkCell(int cellNr, int playerNr){
+		if(gameOver)
+			return;
 		try{
 			game.MarkCell(cellNr, playerNr);
 		}
@@ -44,6 +47,7 @@ public class GameHub{
 				&& gameBoard[i] == gameBoard[i+6])){
 			gameOver = true;
 			message = GetWinner(playerNr);
+			return;
 			}
 		}
 		if((gameBoard[0] != 0 
@@ -54,6 +58,7 @@ public class GameHub{
 			&& gameBoard[2] == gameBoard[6])){
 		gameOver = true;
 		message = GetWinner(playerNr);
+		return;
 		}
 		if(game.GetMovesLeft() < 1){
 			message = "It's a draw !";
@@ -76,5 +81,9 @@ public class GameHub{
 			return player1.GetName();
 		else
 			return player2.GetName();
+	}
+
+	public int GetNextPlayerNr(){
+		return game.GetNextPlayer();
 	}
 }

@@ -1,9 +1,9 @@
 package is.ru.tictactoe;
 
 public class TicTacToeGame implements ITicTacToeGame{
-	private static int[] gameBoard;
-	private static int nextPlayer;
-	private static int movesLeft;
+	private int[] gameBoard;
+	private int nextPlayer;
+	private int movesLeft;
 
 	public TicTacToeGame(){
 		Initialize();
