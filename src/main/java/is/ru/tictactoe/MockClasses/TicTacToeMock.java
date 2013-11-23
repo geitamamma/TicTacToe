@@ -3,9 +3,9 @@ package is.ru.tictactoe;
 // 3 moves left
 // Player 1 is next
 public class TicTacToeMock implements ITicTacToeGame{
-	private int[] gameBoard;
-	private int nextPlayer;
-	private int movesLeft;
+	private static int[] gameBoard;
+	private static int nextPlayer;
+	private static int movesLeft;
 
 	public TicTacToeMock(){
 		//Game Board
