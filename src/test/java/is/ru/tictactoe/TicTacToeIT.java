@@ -122,10 +122,15 @@ public class TicTacToeIT{
 	public void Player1Wins() throws Exception{
 		SetUpGame();
 		selenium.click("id=0");
+		Thread.sleep(500);
 		selenium.click("id=3");
+		Thread.sleep(500);
 		selenium.click("id=1");
+		Thread.sleep(500);
 		selenium.click("id=4");
+		Thread.sleep(500);
 		selenium.click("id=2");
+		Thread.sleep(500);
 		assertEquals("Jon has won !", selenium.getText("message"));
 	}
 
