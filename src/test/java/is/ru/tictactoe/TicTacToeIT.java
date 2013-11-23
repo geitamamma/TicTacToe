@@ -35,6 +35,7 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer1Sign() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		assertEquals("X", selenium.getText("id=0"));
@@ -43,6 +44,7 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer2Sign() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -53,6 +55,7 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer1SignAfter3Rounds() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -65,6 +68,7 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer2SignAfter4Rounds() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -79,6 +83,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player2IsNext() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=1");
 		Thread.sleep(500);
 		assertEquals("Kalli, it's your turn !", selenium.getText("message"));
@@ -87,6 +92,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player1IsNextTwoMoves() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -97,6 +103,7 @@ public class TicTacToeIT{
 	@Test
 	public void CellAlreadyBeenClickedPlayer1() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -109,6 +116,7 @@ public class TicTacToeIT{
 	@Test
 	public void CellAlreadyBeenClickedPlayer1GetSign() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -123,6 +131,7 @@ public class TicTacToeIT{
 	@Test
 	public void CellAlreadyBeenClickedPlayer2() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=0");
@@ -133,6 +142,7 @@ public class TicTacToeIT{
 	@Test
 	public void CellAlreadyBeenClickedPlayer2GetSign() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=0");
@@ -145,6 +155,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player1Wins() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=3");
@@ -161,6 +172,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player1WinsMessageStays() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=3");
@@ -179,6 +191,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player2Wins() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=3");
@@ -197,6 +210,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player2WinsMessageStays() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=3");
@@ -217,6 +231,7 @@ public class TicTacToeIT{
 	@Test
 	public void ItsADraw() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -241,6 +256,7 @@ public class TicTacToeIT{
 	@Test 
 	public void ResetGameCheckMessage() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=1");
@@ -253,6 +269,7 @@ public class TicTacToeIT{
 	@Test
 	public void ResetGameCheckCell1() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=4");
@@ -265,6 +282,7 @@ public class TicTacToeIT{
 	@Test
 	public void ResetGameCheckCell2() throws Exception{
 		SetUpGame();
+		Thread.sleep(500);
 		selenium.click("id=0");
 		Thread.sleep(500);
 		selenium.click("id=4");
@@ -279,7 +297,6 @@ public class TicTacToeIT{
 		selenium.type("name=player1", "Jon");
 		selenium.type("name=player2", "Kalli");
 		selenium.click("id=start-game");
-		Thread.sleep(500);
 	}
 
 	/**************
