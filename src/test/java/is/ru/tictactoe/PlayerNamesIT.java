@@ -36,6 +36,7 @@ public class PlayerNamesIT{
 	public void TestSubmittingEmptyForm() throws Exception{
 		selenium.open("/");
 		selenium.click("id=start-game");
+		Thread.sleep(500);
 		assertEquals("Please enter a name.", selenium.getText("message"));
 	}
 
@@ -44,6 +45,7 @@ public class PlayerNamesIT{
 		selenium.open("/");
 		selenium.type("name=player1", "Jon");
 		selenium.click("id=start-game");
+		Thread.sleep(500);
 		assertEquals("Please enter a name.", selenium.getText("message"));
 	}
 
@@ -52,6 +54,7 @@ public class PlayerNamesIT{
 		selenium.open("/");
 		selenium.type("name=player2", "Kalli");
 		selenium.click("id=start-game");
+		Thread.sleep(500);
 		assertEquals("Please enter a name.", selenium.getText("message"));
 	}
 
@@ -61,6 +64,7 @@ public class PlayerNamesIT{
 		selenium.type("name=player1", "Jon");
 		selenium.type("name=player2", "Kalli");
 		selenium.click("id=start-game");
+		Thread.sleep(500);
 		assertEquals("First player is Jon.", selenium.getText("message"));
 	}
 
