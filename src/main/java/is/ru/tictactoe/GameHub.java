@@ -1,62 +1,82 @@
 package is.ru.tictactoe;
 
+import java.util.ArrayList;
+
 public class GameHub{
 	private ITicTacToeGame game;
+	private Player player1;
+	private Player player2;
+	private boolean gameOver;
+	private boolean isDraw;
+	private static String message;
+	private int winner;
 
-	public GameHub(){
-		game = new TicTacToeGame();
+	public GameHub(ITicTacToeGame _game, Player _player1, Player _player2) throws IllegalArgumentException{
+		if(_game == null || _player1 == null || _player2 == null)
+			throw new IllegalArgumentException("This is somewhat embarrassing, please try again.");
+		game = _game;
+		player1 = _player1;
+		player2 = _player2;
+		winner = 0;
 	}
 
-	public boolean CheckWinner(int p){
+	public void MarkCell(int cellNr, int playerNr){
+		if(gameOver)
+			return;
+		try{
+			game.MarkCell(cellNr, playerNr);
+		}
+		catch(IllegalArgumentException ex){
+			message = ex.getMessage() + " Next player is " + GetNextPlayerName() + "."; 
+			return;
+		}
+		CheckWinner(playerNr);
+		if(!gameOver)
+			message = GetNextPlayerName() + ", it's your turn !";
+	}
+
+	private void CheckWinner(int playerNr){
 		int[] gameBoard = game.GetGameBoard();
-		if(gameBoard[0] == p && gameBoard[1] == p && gameBoard[2] == p){
-			return true;
+		for(int i=0; i<3; i++){
+			if((gameBoard[i*3] != 0 
+				&& gameBoard[i*3] == gameBoard[(i*3)+1] 
+				&& gameBoard[i*3] == gameBoard[(i*3)+2]) || 
+				(gameBoard[i] != 0 
+				&& gameBoard[i] == gameBoard[i+3] 
+				&& gameBoard[i] == gameBoard[i+6])){
+			gameOver = true;
+			message = GetWinner(playerNr);
+			}
 		}
-		else if(gameBoard[3] == p && gameBoard[4] == p && gameBoard[5] == p){
-			return true;
+		if((gameBoard[0] != 0 
+			&& gameBoard[0] == gameBoard[4]
+			&& gameBoard[0] == gameBoard[8]) ||
+			(gameBoard[2] != 0
+			&& gameBoard[2] == gameBoard[4]
+			&& gameBoard[2] == gameBoard[6])){
+		gameOver = true;
+		message = GetWinner(playerNr);
 		}
-		else if(gameBoard[6] == p && gameBoard[7] == p && gameBoard[8] == p){
-			return true;
-		}
-		else if(gameBoard[0] == p && gameBoard[3] == p && gameBoard[6] == p){
-			return true;
-		}
-		else if(gameBoard[1] == p && gameBoard[4] == p && gameBoard[7] == p){
-			return true;
-		}
-		else if(gameBoard[2] == p && gameBoard[5] == p && gameBoard[8] == p){
-			return true;
-		}
-		else if(gameBoard[0] == p && gameBoard[4] == p && gameBoard[8] == p){
-			return true;
-		}
-		else if(gameBoard[2] == p && gameBoard[4] == p && gameBoard[6] == p){
-			return true;
-		} 
-			return false;
-
-
-	}
-
-	public	boolean IsWon(int p){
-		return CheckWinner(p);
-	}	
-/*
-	public	boolean IsDraw(){
-		if(CheckWinner(p) == false)
-		{
-			return true;
+		if(game.GetMovesLeft() < 1){
+			message = "It's a draw !";
+			gameOver = true;
 		}
 	}
-*/
-	public boolean MarkCell(int p, int c){
-		int[] gameBoard = game.GetGameBoard();
-		if(gameBoard[c]==0){
-	
-		gameBoard[c]=p;
-		return true;
-	}
-		return false;
+
+	public String GetWinner(int playerNr){
+		if(player1.GetPlayerNr() == playerNr)
+			return player1.GetName() + " has won !";
+		return player2.GetName() + " has won !";
 	}
 
+	public String GetMessage(){
+		return message;
+	}
+
+	public String GetNextPlayerName(){
+		if(player1.GetPlayerNr() == game.GetNextPlayer())
+			return player1.GetName();
+		else
+			return player2.GetName();
+	}
 }
