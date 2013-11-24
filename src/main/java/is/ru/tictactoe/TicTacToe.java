@@ -11,7 +11,10 @@ public class TicTacToe {
     public static void main(String[] args) {
         staticFileLocation("/public");
         
-        setPort(Integer.valueOf(System.getenv("PORT")));
+        if(System.getenv("PORT") == null)
+            setPort(4567);
+        else
+            setPort(Integer.valueOf(System.getenv("PORT")));
 
         post(new Route("/add-names"){
             @Override
