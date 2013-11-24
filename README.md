@@ -1,4 +1,4 @@
-TicTacToe[![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](https://travis-ci.org/geitamamma/TicTacToe])
+TicTacToe  [![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](https://travis-ci.org/geitamamma/TicTacToe])
 =========
 <ul>
 	<li>
@@ -14,3 +14,5 @@ TicTacToe[![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](https
 		<a href="https://travis-ci.org/geitamamma/TicTacToe">https://travis-ci.org/geitamamma/TicTacToe</a>
 	</li>
 </ul>
+
+<h2>Authors</h2>
