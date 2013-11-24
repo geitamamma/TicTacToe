@@ -29,4 +29,5 @@ TicTacToe  [![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](htt
 <ul>
 	<li><a href="/manuals/development.md">Development manual</a></li>
 	<li><a href="/manuals/administration.md">Administration manual</a></li>
+	<li><a href="/manuals/design.md">Design report</a></li>
 </ul>
