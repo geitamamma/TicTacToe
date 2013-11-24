@@ -37,7 +37,7 @@ The following programs are needed to run this program
 	<li>Go to <a href="https://www.heroku.com/">https://www.heroku.com/</a> and create an account</li>
 </ul>
 
-<h2>Deploy and Maintain<h2>
+<h2>Deploy and Maintain</h2>
 <ul>
 	<li>To set the heroku key for travis run the following commands
 		<pre>
