@@ -24,3 +24,8 @@ TicTacToe  [![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](htt
 	<li>Jón Örn Sigurðsson</li>
 	<li>Kristinn Þröstur Sigurðarson</li>
 </ul>
+
+<h2>Manuals</h2>
+<ul>
+	<li><a href="/manuals/development.md">Development manual</a></li>
+</ul>
