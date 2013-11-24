@@ -54,3 +54,5 @@ The following programs are needed to run this program
 			- export STAGING_SERVER=http://geitamamma-staging.herokuapp.com/  --> - export STAGING_SERVER=http://[yourAppName].herokuapp.com/</pre>
 	</li>
 </ul>
+
+<p>Now you can make some changes to the repository and push them to github and after the project has passed all test it should be up and running on your heroku apps at http://[yourHerokuAppName].herokuapp.com/<p>
