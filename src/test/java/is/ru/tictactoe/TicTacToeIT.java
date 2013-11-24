@@ -233,23 +233,23 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=5");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=3");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=6");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=8");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=7");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("It's a draw !", selenium.getText("message"));
 	}
 
