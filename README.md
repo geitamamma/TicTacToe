@@ -17,6 +17,10 @@ TicTacToe  [![Build Status](https://travis-ci.org/geitamamma/TicTacToe.png)](htt
 
 <h2>Authors</h2>
 <ul>
-	<li>Hannes Guðmundsson - hannesg11</li>
-	<li>Jón Örn Sigurðsson - jonos</li>
+	<li>Elvar Freyr Helgason</li>
+	<li>Hannes Guðmundsson</li>
+	<li>Hörður Kristinsson</li>
+	<li>Ingiberg Steinar Bjarnason</li>
+	<li>Jón Örn Sigurðsson</li>
+	<li>Kristinn Þröstur Sigurðarson</li>
 </ul>
