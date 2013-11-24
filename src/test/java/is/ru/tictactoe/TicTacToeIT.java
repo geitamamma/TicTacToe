@@ -51,7 +51,7 @@ public class TicTacToeIT{
 		Thread.sleep(2000);
 		assertEquals("O", selenium.getText("id=1"));
 	}
-
+	
 	@Test
 	public void GetPlayer1SignAfter3Rounds() throws Exception{
 		SetUpGame();
