@@ -44,7 +44,7 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer2Sign() throws Exception{
 		SetUpGame();
-		selenium.waitForPageToLoad("5000");
+		Thread.sleep(2000);
 		selenium.click("id=0");
 		Thread.sleep(2000);
 		selenium.click("id=1");
@@ -68,7 +68,7 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer2SignAfter4Rounds() throws Exception{
 		SetUpGame();
-		selenium.waitForPageToLoad("5000");
+		Thread.sleep(2000);
 		selenium.click("id=0");
 		Thread.sleep(2000);
 		selenium.click("id=1");
@@ -92,7 +92,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player1IsNextTwoMoves() throws Exception{
 		SetUpGame();
-		selenium.waitForPageToLoad("5000");
+		Thread.sleep(2000);
 		selenium.click("id=0");
 		Thread.sleep(2000);
 		selenium.click("id=1");
@@ -131,7 +131,7 @@ public class TicTacToeIT{
 	@Test
 	public void CellAlreadyBeenClickedPlayer2() throws Exception{
 		SetUpGame();
-		selenium.waitForPageToLoad("5000");
+		Thread.sleep(2000);
 		selenium.click("id=0");
 		Thread.sleep(2000);
 		selenium.click("id=0");
@@ -142,7 +142,7 @@ public class TicTacToeIT{
 	@Test
 	public void CellAlreadyBeenClickedPlayer2GetSign() throws Exception{
 		SetUpGame();
-		selenium.waitForPageToLoad("5000");
+		Thread.sleep(2000);
 		selenium.click("id=0");
 		Thread.sleep(2000);
 		selenium.click("id=0");
@@ -191,7 +191,7 @@ public class TicTacToeIT{
 	@Test
 	public void Player2Wins() throws Exception{
 		SetUpGame();
-		selenium.waitForPageToLoad("5000");
+		Thread.sleep(2000);
 		selenium.click("id=0");
 		Thread.sleep(2000);
 		selenium.click("id=3");
