@@ -30,6 +30,27 @@ The following programs are needed to run this program
 <ul>
 	<li>Fork this repository</li>
 	<li>Clone the project to your computer, run this command:
-		<pre>git clone git@github.com:geitamamma/TicTacToe.git</pre>
+		<pre>git clone git@github.com:[Your_Username]/[ProjectName].git</pre>
 	</li>
+	<li>Go to <a href="https://travis-ci.org/">https://travis-ci.org/</a> and create an account</li>
 	<li>
+	<li>Go to <a href="https://www.heroku.com/">https://www.heroku.com/</a> and create an account</li>
+</ul>
+
+<h2>Deploy and Maintain<h2>
+<ul>
+	<li>To set the heroku key for travis run the following commands
+		<pre>
+			travis setup heroku
+			travis encrypt HEROKU_API_KEY=<your_heroku_key> --add</pre>
+	</li>
+	<li>Connect your Travis account with Github</li>
+	<li>Use Heroku toolbelt to create an app <pre>heroku create</pre></li>
+	<li>Create on app as staging server and one app as production server</li>
+	<li>You will need to change the .travis.yml file according to the heroku apps you just created
+		<pre>
+			app: geitamamma-production  --> app: [yourAppName]
+			repo: geitamamma/TicTacToe  --> repo: [yourRepository]
+			- export STAGING_SERVER=http://geitamamma-staging.herokuapp.com/  --> - export STAGING_SERVER=http://[yourAppName].herokuapp.com/</pre>
+	</li>
+</ul>
