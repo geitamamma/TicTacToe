@@ -37,7 +37,7 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("X", selenium.getText("id=0"));
 	}
 
@@ -46,9 +46,9 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("O", selenium.getText("id=1"));
 	}
 
@@ -57,11 +57,11 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("X", selenium.getText("id=2"));
 	}
 
@@ -70,13 +70,13 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=3");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("O", selenium.getText("id=3"));
 	}
 
@@ -85,7 +85,7 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("Kalli, it's your turn !", selenium.getText("message"));
 	}
 
@@ -94,9 +94,9 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("Jon, it's your turn !", selenium.getText("message"));
 	}
 
@@ -105,11 +105,11 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("This cell has already been marked. Next player is Jon.", selenium.getText("message"));
 	}
 
@@ -118,13 +118,13 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("X", selenium.getText("id=2"));
 	}
 
@@ -133,9 +133,9 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("This cell has already been marked. Next player is Kalli.", selenium.getText("message"));
 	}
 
@@ -144,11 +144,11 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("O", selenium.getText("id=1"));
 	}
 
@@ -157,15 +157,15 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=3");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("Jon has won !", selenium.getText("message"));
 	}
 
@@ -174,17 +174,17 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=3");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=5");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("Jon has won !", selenium.getText("message"));
 	}
 
@@ -193,17 +193,17 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=3");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=8");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=5");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("Kalli has won !", selenium.getText("message"));
 	}
 
@@ -212,19 +212,19 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=3");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=8");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=5");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=2");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("Kalli has won !", selenium.getText("message"));
 	}
 
@@ -258,11 +258,11 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=1");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=reset-game");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("First player is Jon.", selenium.getText("message"));
 	}
 
@@ -271,11 +271,11 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=reset-game");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("", selenium.getText("id=0"));
 	}
 
@@ -284,11 +284,11 @@ public class TicTacToeIT{
 		SetUpGame();
 		selenium.waitForPageToLoad("5000");
 		selenium.click("id=0");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=4");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		selenium.click("id=reset-game");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		assertEquals("", selenium.getText("id=4"));
 	}
 
