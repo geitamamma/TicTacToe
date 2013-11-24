@@ -25,9 +25,8 @@ The following programs are needed to run this program
 	</li>
 	<li>To run the application run the following commands from the root of the project:
 		<pre>
-			bin/package
-			bin/run
-		</pre>
+		bin/package
+		bin/run</pre>
 	</li>
 	<li>Go to http://localhost:4567 to play the game.</li>
 </ul>
