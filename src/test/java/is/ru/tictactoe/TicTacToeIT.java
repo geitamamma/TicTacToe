@@ -35,260 +35,260 @@ public class TicTacToeIT{
 	@Test
 	public void GetPlayer1Sign() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("X", selenium.getText("id=0"));
 	}
 
 	@Test
 	public void GetPlayer2Sign() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("O", selenium.getText("id=1"));
 	}
 
 	@Test
 	public void GetPlayer1SignAfter3Rounds() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("X", selenium.getText("id=2"));
 	}
 
 	@Test
 	public void GetPlayer2SignAfter4Rounds() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=3");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("O", selenium.getText("id=3"));
 	}
 
 	@Test
 	public void Player2IsNext() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("Kalli, it's your turn !", selenium.getText("message"));
 	}
 
 	@Test
 	public void Player1IsNextTwoMoves() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("Jon, it's your turn !", selenium.getText("message"));
 	}
 
 	@Test
 	public void CellAlreadyBeenClickedPlayer1() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("This cell has already been marked. Next player is Jon.", selenium.getText("message"));
 	}
 
 	@Test
 	public void CellAlreadyBeenClickedPlayer1GetSign() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("X", selenium.getText("id=2"));
 	}
 
 	@Test
 	public void CellAlreadyBeenClickedPlayer2() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("This cell has already been marked. Next player is Kalli.", selenium.getText("message"));
 	}
 
 	@Test
 	public void CellAlreadyBeenClickedPlayer2GetSign() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("O", selenium.getText("id=1"));
 	}
 
 	@Test
 	public void Player1Wins() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=3");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("Jon has won !", selenium.getText("message"));
 	}
 
 	@Test
 	public void Player1WinsMessageStays() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=3");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=5");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("Jon has won !", selenium.getText("message"));
 	}
 
 	@Test
 	public void Player2Wins() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=3");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=8");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=5");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("Kalli has won !", selenium.getText("message"));
 	}
 
 	@Test
 	public void Player2WinsMessageStays() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=3");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=8");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=5");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("Kalli has won !", selenium.getText("message"));
 	}
 
 	@Test
 	public void ItsADraw() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=2");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=5");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=3");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=6");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=8");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=7");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("It's a draw !", selenium.getText("message"));
 	}
 
 	@Test 
 	public void ResetGameCheckMessage() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=reset-game");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("First player is Jon.", selenium.getText("message"));
 	}
 
 	@Test
 	public void ResetGameCheckCell1() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=reset-game");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("", selenium.getText("id=0"));
 	}
 
 	@Test
 	public void ResetGameCheckCell2() throws Exception{
 		SetUpGame();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=0");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=4");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		selenium.click("id=reset-game");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		assertEquals("", selenium.getText("id=4"));
 	}
 
