@@ -29,4 +29,5 @@ The following programs are needed to run this program
 			bin/run
 		</pre>
 	</li>
+	<li>Go to http://localhost:4567 to play the game.</li>
 </ul>
