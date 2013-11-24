@@ -18,7 +18,7 @@ The following programs are needed to run this program
 
 <p>You will need to get access to the project on github</p>
 
-<h2>Running the project (Windows)</h2>
+<h2>Running the project</h2>
 <ul>
 	<li>Clone this project to your computer, run this command:
 		<pre>git clone git@github.com:geitamamma/TicTacToe.git</pre>
